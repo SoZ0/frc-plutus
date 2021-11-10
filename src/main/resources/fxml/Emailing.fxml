@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane prefHeight="660.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.sozoservers.dev.gui.controller.EmailingController">
+   <tabs>
+      <Tab text="Sending">
+         <content>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sending Emails">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                  </Text>
+                  <HBox alignment="CENTER" prefHeight="136.0" prefWidth="671.0">
+                     <children>
+                        <Label contentDisplay="BOTTOM" text="Subject Line">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ComboBox fx:id="emailingSubjectLine" prefWidth="150.0" />
+                           </graphic>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label contentDisplay="BOTTOM" text="Body">
+                           <graphic>
+                              <ComboBox fx:id="emailingBody" prefWidth="150.0" />
+                           </graphic>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label contentDisplay="BOTTOM" text="Attachment">
+                           <graphic>
+                              <ComboBox fx:id="emailingAttachment" prefWidth="150.0" />
+                           </graphic>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="318.0" prefWidth="671.0">
+                     <children>
+                        <Label prefHeight="91.0" prefWidth="224.0" text="Currently Emailing">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <Label contentDisplay="RIGHT" prefHeight="62.0" prefWidth="335.0" text="Name">
+                           <graphic>
+                              <TextField fx:id="emailingName" editable="false" prefHeight="25.0" prefWidth="281.0" promptText="Company/Individual's Name" />
+                           </graphic>
+                        </Label>
+                        <Label contentDisplay="RIGHT" prefHeight="62.0" prefWidth="339.0" text="Email">
+                           <graphic>
+                              <TextField fx:id="emailingEmail" editable="false" prefHeight="25.0" prefWidth="288.0" promptText="sponsorconact@email.com" />
+                           </graphic>
+                        </Label>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="452.0" prefWidth="221.0">
+                     <children>
+                        <Label prefHeight="110.0" prefWidth="166.0" text="Status">
+                           <font>
+                              <Font size="61.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="46.0" prefWidth="135.0" text="Emails Sent: " textAlignment="CENTER">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="emailingEmailsSent" text="0" />
+                        <Label alignment="CENTER" prefHeight="48.0" prefWidth="109.0" text="Emails Left:">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="emailingEmailsLeft" prefWidth="10.0" text="0" />
+                        <Button fx:id="startButton" mnemonicParsing="false" onAction="#onEmailingStart" text="Start">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Label fx:id="emailingErrorText" textFill="RED" wrapText="true" />
+                     </children>
+                  </VBox>
+               </children>
+            </FlowPane>
+         </content>
+      </Tab>
+      <Tab text="Responding" />
+      <Tab text="Upload">
+         <content>
+            <FlowPane alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="213.0" prefWidth="254.0">
+                     <children>
+                        <Label contentDisplay="BOTTOM" prefHeight="170.0" prefWidth="251.0" text="Section">
+                           <graphic>
+                              <ComboBox prefHeight="44.0" prefWidth="252.0" />
+                           </graphic>
+                           <font>
+                              <Font size="33.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </FlowPane>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>
